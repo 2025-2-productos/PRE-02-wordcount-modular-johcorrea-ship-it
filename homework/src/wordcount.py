@@ -9,21 +9,14 @@ from ._internals.write_count_words import write_count_words
 
 
 def main():
-    ## mover a la funcion read all lines
-    all_lines = read_all_lines()
+    input_folder = "data/input/"
+    output_folder = "data/output/"
 
-    ### mover a la funcion preprocess lines
+    all_lines = read_all_lines(input_folder)
     all_lines = preprocess_lines(all_lines)
-
-    ### mover a la funcionsplit in words
     words = split_into_words(all_lines)
-
-    ### mover a la funcion count words
     counter = count_words(words)
-
-    ### mover a la funcion write count words
-
-    write_count_words(counter)
+    write_count_words(counter, output_folder)
 
 
 if __name__ == "__main__":
